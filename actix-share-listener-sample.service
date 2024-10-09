@@ -1,0 +1,12 @@
+[Unit]
+Description=Example App Service
+Requires=/tmp/share-fd.sock
+
+[Service]
+ExecStart=/path/to/target/debug/actix-share-listener-sample
+Restart=always 
+Environment=LISTEN_FDS=1
+Environment=LISTEN_PID=%p
+
+[Install]
+WantedBy=multi-user.target
