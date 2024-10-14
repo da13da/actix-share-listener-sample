@@ -1,12 +1,13 @@
 [Unit]
 Description=Example App Service
-Requires=/tmp/share-fd.sock
+After=network.target
+Requires=actix-share-listener-sample.socket
 
 [Service]
-ExecStart=/path/to/target/debug/actix-share-listener-sample
+ExecStart=/home/dai/work/actix-share-listener-sample/target/debug/actix-share-listener-sample
 Restart=always 
-Environment=LISTEN_FDS=1
-Environment=LISTEN_PID=%p
+#Environment=LISTEN_FDS=1
+#Environment=LISTEN_PID=%p
 
 [Install]
 WantedBy=multi-user.target

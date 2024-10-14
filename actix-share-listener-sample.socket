@@ -1,0 +1,10 @@
+[Unit]
+Description=Example App Socket
+
+[Socket]
+ListenStream=/tmp/share-fd.sock
+SocketMode=0666
+
+[Install]
+WantedBy=sockets.target
+
